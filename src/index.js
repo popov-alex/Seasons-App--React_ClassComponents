@@ -1,17 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM, { createRoot } from "react-dom/client";
+import SeasonComponent from "./SeasonComponent";
+import Spinner from "./Spinner";
+import "./App.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+class App extends React.Component {
+  state = { lat: null, error: "" };
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  componentDidMount() {
+    window.navigator.geolocation.getCurrentPosition(
+      (position) => this.setState({ lat: position.coords.latitude }),
+      (error) => this.setState({ error: error.message })
+    );
+  }
+
+  renderContent() {
+    if (this.state.error && !this.state.lat) {
+      return <div>Error: {this.state.error}</div>;
+    }
+    if (!this.state.error && this.state.lat) {
+      return (
+        <div>
+          <SeasonComponent lat={this.state.lat} />
+        </div>
+      );
+    }
+    return <Spinner />;
+  }
+
+  render() {
+    return <div>{this.renderContent()}</div>;
+  }
+}
+
+const root = ReactDOM.createRoot(document.querySelector("#root"));
+root.render(<App />);
