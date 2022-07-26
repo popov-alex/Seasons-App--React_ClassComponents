@@ -14,57 +14,20 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+## General Description of the Project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is an educational project, the goal of which was to practice React datastructures and syntax.
 
-### `npm run build`
+The application itself is not really useful, as it only identifies whether the user is in the Southern or Northern Hemisphere and whether it is summer or winter for him/her respectively.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+However, even with such a limited functionality, this application contains the core React data structures and uses modern React syntax.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Specifically, this application is built with the class based component called App, which is as we know must be a JavaScript class that extends the subclass of or the super class of React component.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The App component has a state, which makes it a little bit easier to handle user input and in our case, respond to data loading events. State is a JS Object that contains data relevant to the component, in our case data re location of the user.
 
-### `npm run eject`
+State is a part of constructor function of the class component and even if we omit the constructor function, Babel adds it behind the scenes.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+With the class-based components, we can make use of life cycle methods. This App uses the componentDidMount() method to update the state with the setState() function. We know that setState() is the only valid way to update the state of a component in React.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The App component of course has a render() method which is a must-have for components in React.
