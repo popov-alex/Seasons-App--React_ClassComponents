@@ -1,24 +1,8 @@
-# Getting Started with Create React App
+## Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an educational project, the goal of which was to practice React data structures and syntax.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-## General Description of the Project
-
-This is an educational project, the goal of which was to practice React datastructures and syntax.
-
-The application itself is not really useful, as it only identifies whether the user is in the Southern or Northern Hemisphere and whether it is summer or winter for him/her respectively.
+The application itself is very plain, as it only identifies whether the user is in the Southern or Northern Hemisphere and whether it is summer or winter for him/her respectively.
 
 However, even with such a limited functionality, this application contains the core React data structures and uses modern React syntax.
 
@@ -31,3 +15,15 @@ State is a part of constructor function of the class component and even if we om
 With the class-based components, we can make use of life cycle methods. This App uses the componentDidMount() method to update the state with the setState() function. We know that setState() is the only valid way to update the state of a component in React.
 
 The App component of course has a render() method which is a must-have for components in React.
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
